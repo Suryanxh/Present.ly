@@ -1,0 +1,54 @@
+numpy
+# → Numerical computing library for Python.
+# → Provides fast N-dimensional arrays and mathematical operations.
+# → Used for matrix/array processing in ML and image data.
+
+pandas
+# → Data manipulation and analysis library.
+# → Provides DataFrame and Series structures for handling tabular data.
+# → Used for managing student records, attendance data, and CSV/Excel datasets.
+
+scikit-learn
+# → Machine learning library containing algorithms and preprocessing utilities.
+# → Provides tools for classification, clustering, feature extraction, and model evaluation.
+# → Can be used for processing and analyzing face-related feature data.
+# 
+dlib-bin
+# → Precompiled distribution of the dlib computer vision library.
+# → Provides machine learning and image-processing functionality.
+# → Used by face-recognition systems for face detection and facial landmark extraction.
+
+git+https://github.com/ageitgey/face_recognition_models
+# → Repository containing pre-trained models used by the face_recognition library.
+# → Provides trained models for face detection and facial landmark/face encoding operations.
+# → These models are used to generate numerical representations of faces.
+
+setuptools
+# → Python package development and distribution utility.
+# → Handles package installation, dependency management, and build configuration.
+# → Helps Python libraries and projects install correctly.
+# 
+supabase
+# → Python client library for Supabase.
+# → Provides access to PostgreSQL database, authentication, storage, and other Supabase services.
+# → Can be used to store student information and attendance records.
+
+bcrypt
+# → Password hashing library based on the bcrypt adaptive hashing algorithm.
+# → Converts passwords into secure one-way hashes.
+# → Used for securely storing and verifying user passwords.
+
+segno
+# → Python library for generating QR codes.
+# → Creates QR codes from text, URLs, IDs, or other data.
+# → Can be used to generate QR codes for attendance verification.
+
+pillow
+# → Python Imaging Library used for image processing.
+# → Supports image loading, resizing, cropping, conversion, and manipulation.
+# → Useful for preprocessing student/face images before recognition.
+
+streamlit
+# → Python framework for building interactive web applications.
+# → Converts Python scripts into browser-based interfaces without requiring traditional frontend development.
+# → Can be used to create the UI/dashboard for the AI attendance system.
