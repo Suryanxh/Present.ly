@@ -23,7 +23,7 @@ git+https://github.com/ageitgey/face_recognition_models
 # → Provides trained models for face detection and facial landmark/face encoding operations.
 # → These models are used to generate numerical representations of faces.
 
-setuptools
+setuptools<81
 # → Python package development and distribution utility.
 # → Handles package installation, dependency management, and build configuration.
 # → Helps Python libraries and projects install correctly.
@@ -52,3 +52,8 @@ streamlit
 # → Python framework for building interactive web applications.
 # → Converts Python scripts into browser-based interfaces without requiring traditional frontend development.
 # → Can be used to create the UI/dashboard for the AI attendance system.
+
+
+librosa
+
+resemblyzer
