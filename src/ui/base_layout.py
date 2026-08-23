@@ -40,7 +40,7 @@ def style_background_dashboard():
     
 
 def style_base_layout():
-# asdasd
+
     st.markdown("""
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap');
