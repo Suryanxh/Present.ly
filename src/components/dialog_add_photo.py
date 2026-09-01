@@ -10,7 +10,7 @@ def add_photos_dialog():
     st.write('Add classroom photos to scan for attendance')
 
     if 'photo_tab' not in st.session_state:
-        st.session_state.photo_tab = 'camera'
+        st.session_state.photo_tab = 'upload'
 
     t1, t2 = st.columns(2)
 
@@ -20,9 +20,9 @@ def add_photos_dialog():
         if st.button('Camera', type = type_camera, width = 'stretch'):
             st.session_state.photo_tab = 'camera'
 
-    with t1:
+    with t2:
         type_upload = 'primary' if st.session_state.photo_tab == 'upload' else 'tertiary'
-        if st.button('Upload photos', type = type_camera, width = 'stretch'):
+        if st.button('Upload photos', type = type_upload, width = 'stretch'):
             st.session_state.photo_tab = 'upload'
 
 
