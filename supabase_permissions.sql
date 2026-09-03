@@ -12,6 +12,7 @@ to anon, authenticated;
 grant insert on table public.subjects to anon, authenticated;
 grant insert on table public.subject_students to anon;
 grant insert on table public.subject_students to authenticated;
+grant insert on table public.attendance_logs to anon, authenticated;
 grant delete on table public.subject_students to anon;
 grant delete on table public.subject_students to authenticated;
 
@@ -35,6 +36,13 @@ on public.attendance_logs
 for select
 to public
 using (true);
+
+drop policy if exists "api_can_insert_attendance_logs" on public.attendance_logs;
+create policy "api_can_insert_attendance_logs"
+on public.attendance_logs
+for insert
+to public
+with check (true);
 
 drop policy if exists "api_can_insert_subjects" on public.subjects;
 drop policy if exists "anon_can_insert_subjects" on public.subjects;
