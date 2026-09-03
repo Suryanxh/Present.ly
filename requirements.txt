@@ -1,3 +1,8 @@
+streamlit
+# → Python framework for building interactive web applications.
+# → Converts Python scripts into browser-based interfaces without requiring traditional frontend development.
+# → Can be used to create the UI/dashboard for the AI attendance system.
+
 numpy
 # → Numerical computing library for Python.
 # → Provides fast N-dimensional arrays and mathematical operations.
@@ -47,11 +52,6 @@ pillow
 # → Python Imaging Library used for image processing.
 # → Supports image loading, resizing, cropping, conversion, and manipulation.
 # → Useful for preprocessing student/face images before recognition.
-
-streamlit
-# → Python framework for building interactive web applications.
-# → Converts Python scripts into browser-based interfaces without requiring traditional frontend development.
-# → Can be used to create the UI/dashboard for the AI attendance system.
 
 
 librosa

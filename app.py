@@ -6,7 +6,10 @@ from src.screens.teacher_screen import teacher_screen
 from src.components.dialog_auto_enroll import auto_enroll_dialog
 
 def main():
-
+    st.set_page_config(
+        page_title="Present.ly - Making Attendance faster using AI",
+        page_icon="https://i.ibb.co/YTYGn5qV/logo.png"
+    )
     if 'login_type' not in st.session_state:
         st.session_state['login_type'] = None
 
