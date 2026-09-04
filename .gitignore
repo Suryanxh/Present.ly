@@ -13,4 +13,4 @@ venv/
 
 dist/
 
-.supabase_permissions.sql/
+supabase_permissions.sql
