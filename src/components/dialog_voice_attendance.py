@@ -10,13 +10,23 @@ from src.components.dialog_attendance_results import show_attendance_result
 def voice_attendance_dialog(selected_subject_id):
     st.write('Record audio of students saying I am Present. Then AI will recognize the students')
 
-    audio_data = None
-
-    audio_data = st.audio_input("Record classroom audio")
+    audio_data = st.audio_input(
+        "Record classroom audio",
+        sample_rate=16000,
+        key="voice_attendance_recorder",
+        help="Microphone access requires HTTPS or localhost. If recording fails, upload a WAV file below.",
+    )
+    uploaded_audio = st.file_uploader(
+        "Or upload classroom audio",
+        type=["wav", "mp3", "m4a", "ogg", "webm"],
+        key="voice_attendance_upload",
+        help="Use this when the browser cannot access your microphone.",
+    )
 
     if st.button('Analyze Audio', width='stretch', type = 'primary'):
-        if audio_data is None:
-            st.warning('Please record audio before analyzing.')
+        recording = audio_data or uploaded_audio
+        if recording is None:
+            st.warning('Please record or upload audio before analyzing.')
             return
 
         with st.spinner('Processing Audio data'):
@@ -35,7 +45,7 @@ def voice_attendance_dialog(selected_subject_id):
                 st.error('No enrolled students have voice profiles registerd')
                 return
 
-            audio_bytes = audio_data.read()
+            audio_bytes = recording.getvalue()
 
             detected_scores = process_bulk_audio(audio_bytes, candidates_dict)
 

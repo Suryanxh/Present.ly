@@ -12,14 +12,17 @@ def load_voice_encoder():
 
 def get_voice_embedding(audio_bytes):
     try:
+        if not audio_bytes:
+            raise ValueError('The recorded audio is empty.')
+
         encoder = load_voice_encoder()
 
         audio, sr = librosa.load(io.BytesIO(audio_bytes), sr=16000)
         wav = preprocess_wav(audio)
         embedding = encoder.embed_utterance(wav)
         return embedding.tolist()
-    except Exception as e:
-        st.error('Voice recog error')
+    except Exception as error:
+        st.error(f'Voice recognition failed: {error}')
         return None
     
 
@@ -47,6 +50,9 @@ def identify_speaker(new_embedding, candidates_dict, threshold=0.65):
 def process_bulk_audio(audio_bytes, candidates_dict, threshold=0.65):
 
     try:
+        if not audio_bytes:
+            raise ValueError('The recorded audio is empty.')
+
         encoder = load_voice_encoder()
 
         audio, sr = librosa.load(io.BytesIO(audio_bytes), sr=16000)
@@ -71,6 +77,6 @@ def process_bulk_audio(audio_bytes, candidates_dict, threshold=0.65):
                     identified_results[sid] = score
 
         return identified_results
-    except Exception as e:
-        st.error('Bulk process error')
+    except Exception as error:
+        st.error(f'Audio analysis failed: {error}')
         return {}
